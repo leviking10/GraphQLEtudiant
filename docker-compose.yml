@@ -1,0 +1,34 @@
+version: '3.9'
+services:
+  mysql-graphqletudiant:
+    image: mysql:8.0
+    container_name: container_mysql-graphQletudiant
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: graphqletudiant
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: mysqladmin ping -h 127.0.0.1 -u $$MYSQL_USER --password=$$MYSQL_PASSWORD
+
+  phpmyadmin-graphQletudiant-db:
+    container_name: container_phpmyadmin-graphQletudiant
+    image: phpmyadmin/phpmyadmin:latest
+    ports:
+      - 8088:80
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      PMA_HOST: mysql-graphqletudiant
+      PMA_USER: user
+      PMA_PASSWORD: user
+    depends_on:
+      - mysql-graphqletudiant
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
+    driver: local

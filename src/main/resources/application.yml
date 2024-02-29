@@ -1,0 +1,29 @@
+server:
+  port: 8084
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3307/graphqletudiant?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: user
+    password: user
+    driverClassName: com.mysql.cj.jdbc.Driver
+  application:
+    name: spring-graphqletudiant
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+springdoc:
+  api-docs:
+    path: /api-docs
+
+info:
+  application:
+    name: GraphQLEtudiant
+    version: '@project.version@'

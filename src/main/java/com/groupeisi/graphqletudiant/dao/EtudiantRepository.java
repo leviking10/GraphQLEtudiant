@@ -1,11 +1,9 @@
-package com.youdev.SpringGrapQl.dao;
+package com.groupeisi.graphqletudiant.dao;
 
-
-import com.youdev.SpringGrapQl.entity.Etudiant;
+import com.groupeisi.graphqletudiant.entity.Etudiant;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 
-public interface EtudiantRepository extends CrudRepository<Etudiant,Integer>{
-
+public interface EtudiantRepository extends JpaRepository<Etudiant,Integer> {
 	Etudiant findByEmail(String email);
-
 }

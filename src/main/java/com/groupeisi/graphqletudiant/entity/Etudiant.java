@@ -1,5 +1,4 @@
-package com.youdev.SpringGrapQl.entity;
-
+package com.groupeisi.graphqletudiant.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Getter;
@@ -11,8 +10,7 @@ import lombok.Setter;
 public class Etudiant {
     @Id
     private int id;
-    private String nom;
-    private String prenom;
+    private String name;
     private String telephone;
     private String email;
     private String address;
