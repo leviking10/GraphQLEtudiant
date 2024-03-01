@@ -3,10 +3,9 @@ schema{
 }
 
 type Query{
-    getAllEtudiant : [Etudiant]
-    findEtudiant(email: String) : Etudiant
+    getAllEtudiant:[Etudiant]
+    findEtudiant(email:String):Etudiant
 }
-
 type Etudiant{
     id: Int
     name: String
