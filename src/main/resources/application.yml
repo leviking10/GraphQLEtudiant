@@ -9,7 +9,6 @@ spring:
     driverClassName: com.mysql.cj.jdbc.Driver
   application:
     name: spring-graphqletudiant
-
   jpa:
     hibernate:
       ddl-auto: update
@@ -18,6 +17,9 @@ spring:
     properties:
       hibernate:
         format_sql: true
+  graphql:
+    graphql:
+      enable: true
 
 springdoc:
   api-docs:
@@ -27,3 +29,4 @@ info:
   application:
     name: GraphQLEtudiant
     version: '@project.version@'
+

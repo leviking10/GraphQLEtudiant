@@ -1,0 +1,30 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Query {
+    getAllEtudiant: [Etudiant]
+    findEtudiant(email: String): Etudiant
+}
+
+type Mutation {
+    addEtudiant(etudiant: EtudiantInput): Etudiant
+    updateEtudiant(id: Int, etudiant: EtudiantInput): Etudiant
+    deleteEtudiant(id: Int): String
+}
+
+type Etudiant {
+    id: Int
+    name: String
+    telephone: String
+    email: String
+    address: String
+}
+
+input EtudiantInput {
+    name: String
+    telephone: String
+    email: String
+    address: String
+}
